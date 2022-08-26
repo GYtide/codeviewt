@@ -1,5 +1,7 @@
 # codeviewt README
 
+vscode插件，在vscode中管理网页收藏
+
 This is the README for your extension "codeviewt". After writing up a brief description, we recommend including the following sections.
 
 ## Features
