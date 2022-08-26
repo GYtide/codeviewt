@@ -1,0 +1,425 @@
+{
+	"name": "codeviewt",
+	"displayName": "codeviewt",
+	"description": "",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.67.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+
+		"*:saveFrombrowser",
+		"onCommand:codeviewt.helloWorld",
+		"onCommand:pageDependencies.rename",
+		"onCommand:pageClick",
+		"onView:pinProDepen",
+		"onView:ProDepen",
+		"onView:nodeDependencies",
+		"onView:pageDependencies"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "saveFrombrowser",
+				"title": "从betterOneTab保存"
+			},
+			{
+				"command": "codeviewt.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "pageDependencies.refreshEntry",
+				"title": "刷新",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "pageDependencies.addEntry",
+				"title": "添加",
+				"icon": "res/icons/dark/new-file-g1.svg"
+			},
+			{
+				"command": "ProDepen.edittitle",
+				"title": "修改项目标题"
+			},
+			{
+				"command": "pageDependencies.editemark",
+				"title": "编辑备注"
+			},
+			{
+				"command": "pageDependencies.pin",
+				"title": "固定"
+			},
+			{
+				"command": "pageDependencies.unpin",
+				"title": "取消固定"
+			},
+			{
+				"command": "pageDependencies.find",
+				"title": "查找",
+				"icon":"res/icons/dark/search-g.svg"
+			},
+			{
+				"command": "page.delete",
+				"title": "删除"
+			},
+			{
+				"command": "fileDependencies.refreshEntry",
+				"title": "刷新",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "fileDependencies.find",
+				"title": "查找",
+				"icon":"res/icons/dark/search-g.svg"
+			},
+			{
+				"command": "fileDependencies.addEntry",
+				"title": "添加",
+				"icon": "res/icons/dark/new-file-g.svg"
+			},
+			{
+				"command": "page.openLink",
+				"title": "从浏览器打开网页",
+				"icon": "res/icons/dark/link-external-g.svg"
+			},
+			{
+				"command": "file.openFile",
+				"title": "打开文件",
+				"icon": "res/icons/dark/file-symlink-file-g.svg"
+			},
+			{
+				"command": "fileDependencies.editemark",
+				"title": "编辑备注"
+			},
+			{
+				"command": "fileDependencies.pin",
+				"title": "固定"
+			},
+			{
+				"command": "fileDependencies.unpin",
+				"title": "取消固定"
+			},
+			{
+				"command": "file.delete",
+				"title": "删除"
+			},
+			{
+				"command": "file.opendefault",
+				"title":"以默认方式打开"
+			},
+			{
+				"command": "pinpro.addpro",
+				"title": "添加固定项目",
+				"icon": "res/icons/dark/repo-push-g.svg"
+			},
+			{
+				"command": "ProDepen.pinPro",
+				"title": "固定项目"
+			},
+			{
+				"command": "addchilePro",
+				"title": "添加子项目",
+				"icon": "res/icons/dark/repo-push-g.svg"
+			},
+			{
+				"command": "delchilePro",
+				"title": "删除子项目",
+				"icon": "res/icons/dark/error.svg"
+			},
+			{
+				"command": "ProDepen.refreshEntry",
+				"title": "刷新",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "pinProDepen.refreshEntry",
+				"title": "刷新",
+				"icon": {
+					"light": "res/light/refresh.svg",
+					"dark": "res/dark/refresh.svg"
+				}
+			},
+			{
+				"command": "pinProDepen.unpinpro",
+				"title": "取消固定项目"
+			},
+			{
+				"command": "ProDepen.addEntry",
+				"title": "创建新项目",
+				"icon": "res/icons/dark/repo-push-g.svg"
+			},
+			{
+                "command": "ProDepen.deletePage",
+				"title": "从项目中删除"
+			},
+			{
+				"command": "ProDepen.deletefile",
+				"title": "从项目中删除"
+			},
+			{
+				"command": "ProDepen.addfile",
+				"title": "添加文件到项目",
+				"icon": "res/icons/dark/new-file-g.svg"
+			},
+			{
+				"command": "ProDepen.addfilefromlist",
+				"title": "从文件列表中添加",
+				"icon":"res/icons/dark/sign-in-g.svg"
+			},
+			{
+				"command": "ProDepen.addpage",
+				"title": "添加网页到项目",
+				"icon": "res/icons/dark/new-file-g.svg"
+			},
+			{
+				"command": "pro.import",
+				"title": "导出项目",
+				"icon":"res/icons/dark/sign-out-g.svg"
+			}
+		],
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "GyTabs",
+					"title": "Gy Tabs",
+					"icon": "res/logo.svg"
+				}
+			]
+		},
+		"views": {
+			"GyTabs": [
+				{
+					"id": "pinProDepen",
+					"name": "当前项目"
+				},
+				{
+					"id": "ProDepen",
+					"name": "项目"
+				},
+				{
+					"id": "pageDependencies",
+					"name": "网页",
+					"icon": "res/file-symlink-file-g.svg"
+				},
+				{
+					"id": "fileDependencies",
+					"name": "文件",
+					"icon": "res/file-submodule-g.svg"
+				}
+			]
+		},
+		"viewsWelcome": [
+			{
+				"view": "pageDependencies",
+				"contents": "暂时没有网页.\n[添加网页](command:pageDependencies.addEntry)"
+			},
+			{
+				"view": "fileDependencies",
+				"contents": "暂时没有文件.\n[添加文件](command:fileDependencies.addEntry)"
+			},
+			{
+				"view": "pinProDepen",
+				"contents": "暂时没有固定的项目.\n[添加项目](command:pinpro.addpro)"
+			},
+			{
+				"view": "ProDepen",
+				"contents": "暂时没有项目.\n[创建项目](command:ProDepen.addEntry)"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "pageDependencies.refreshEntry",
+					"when": "view == pageDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "pageDependencies.find",
+					"when": "view == pageDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "fileDependencies.refreshEntry",
+					"when": "view== fileDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "fileDependencies.find",
+					"when": "view== fileDependencies",
+					"group": "navigation"
+				},
+				{
+					"command": "ProDepen.refreshEntry",
+					"when": "view == ProDepen",
+					"group": "navigation"
+				},
+				{
+					"command": "ProDepen.addEntry",
+					"when": "view == ProDepen",
+					"group": "navigation"
+				},
+				{
+					"command": "pinProDepen.refreshEntry",
+					"when": "view == pinProDepen",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "ProDepen.addfile",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == filelist",
+					"group": "inline"
+				},
+				{
+					"command": "ProDepen.edittitle",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == proj"
+				},
+				{
+					"command": "ProDepen.addpage",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == pagelist",
+					"group": "inline"
+				},
+				{
+					"command": "ProDepen.addfilefromlist",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == filelist",
+					"group": "inline"
+				},
+				{
+					"command": "addchilePro",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == projlist ",
+					"group": "inline"
+				},
+				{
+					"command": "delchilePro",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == projlist ",
+					"group": "inline"
+				},
+				{
+					"command": "ProDepen.pinPro",
+					"when": "view == ProDepen && viewItem == proj"
+				},
+				{
+					"command": "pinProDepen.unpinpro",
+					"when": "view == pinProDepen && viewItem == proj"
+				},
+				{
+					"command": "pageDependencies.addEntry",
+					"when": "view == pageDependencies&& viewItem == pagelist",
+					"group": "inline"
+				},
+				{
+					"command": "page.openLink",
+					"when": "view =~ /^(pageDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinpage|unpinpage|propage)$/",
+					"group": "inline"
+				},
+				{
+					"command": "fileDependencies.addEntry",
+					"when": "view== fileDependencies && viewItem == filelist",
+					"group": "inline"
+				},
+				{
+					"command": "file.openFile",
+					"when": "view=~ /^(fileDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinfile|unpinfile|profile)$/",
+					"group": "inline"
+				},
+				{
+					"command": "file.opendefault",
+					"when": "view=~ /^(fileDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinfile|unpinfile|profile)$/"
+				},
+				{
+					"command": "pageDependencies.editemark",
+					"when": "view =~ /^(pageDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinpage|unpinpage|propage)$/"
+				},
+				{
+					"command": "fileDependencies.editemark",
+					"when": "view =~ /^(fileDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinfile|unpinfile|profile)$/"
+				},
+				{
+					"command": "pageDependencies.pin",
+					"when": "view == pageDependencies && viewItem == unpinpage"
+				},
+				{
+					"command": "fileDependencies.pin",
+					"when": "view == fileDependencies && viewItem == unpinfile"
+				},
+				{
+					"command": "pageDependencies.unpin",
+					"when": "view == pageDependencies && viewItem == pinpage"
+				},
+				{
+					"command": "fileDependencies.pin",
+					"when": "view == fileDependencies && viewItem == pinfile"
+				},
+				{
+					"command": "page.delete",
+					"when": "view =~ /^(pageDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinpage|unpinpage|propage)$/"
+				},
+				{
+					"command": "ProDepen.deletePage",
+					"when": "view =~ /^(pinProDepen|ProDepen)$/ && viewItem == propage"
+				},
+				{
+					"command": "ProDepen.deletefile",
+					"when": "view =~ /^(pinProDepen|ProDepen)$/ && viewItem == profile"
+				},
+				{
+					"command": "file.delete",
+					"when": "view =~ /^(fileDependencies|ProDepen|pinProDepen)$/ && viewItem =~ /^(pinfile|unpinfile|profile)$/"
+				},
+				{
+					"command": "ProDepen.addEntry",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == proj",
+					"group": "inline"
+				},
+				{
+					"command": "pro.import",
+					"when": "view =~ /^(ProDepen|pinProDepen)$/ && viewItem == proj"
+
+				}
+
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.67.0",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^5.21.0",
+		"@typescript-eslint/parser": "^5.21.0",
+		"eslint": "^8.14.0",
+		"glob": "^8.0.1",
+		"mocha": "^9.2.2",
+		"typescript": "^4.6.4",
+		"@vscode/test-electron": "^2.1.3"
+	},
+	"dependencies": {
+		"chokidar": "^3.5.3",
+		"express": "^4.18.1",
+		"moment": "^2.29.3",
+		"mssql": "^8.1.2",
+		"node-mssql": "0.0.1",
+		"rollup": "^2.75.6"
+	}
+}
